@@ -15,6 +15,6 @@ def ssh_command(ip, user, passwd, command):
         print ssh_session.recv(1024)
     return
 
-username = raw_input('Username: ')
-password = raw_input('Password: ')
-ssh_command('readspot.no-ip.info', username, password, 'id')
+username = raw_input('Username: ').strip('\n')
+password = raw_input('Password: ').strip('\n')
+ssh_command('127.0.0.1', username, password, 'id')
