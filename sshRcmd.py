@@ -4,6 +4,7 @@ import sys
 import threading
 import paramiko
 import subprocess
+import getpass
 
 def ssh_command(ip, port, user, passwd, command):
     client = paramiko.SSHClient()
@@ -27,5 +28,5 @@ def ssh_command(ip, port, user, passwd, command):
 server = sys.argv[1]
 ssh_port = int(sys.argv[2])
 username = raw_input('Username: ').strip('\n')
-password = raw_input('Password: ').strip('\n')
+password = getpass.getpass('Password: ')
 ssh_command(server, ssh_port, username, password, 'ClientConnected')

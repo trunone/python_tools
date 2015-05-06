@@ -16,5 +16,5 @@ def ssh_command(ip, user, passwd, command):
     return
 
 username = raw_input('Username: ').strip('\n')
-password = raw_input('Password: ').strip('\n')
+password = getpass.getpass('Password: ')
 ssh_command('127.0.0.1', username, password, 'id')
